@@ -1,0 +1,36 @@
+/*@!Encoding:1252*/
+/*
+ * Script:          <script name>
+ * Purpose:         <one line; supplement to the Python/Pytest suite>
+ * Trace:           <requirement IDs, e.g. FR-BT-002, NFR-BT-005>
+ * CANoe version:   CANoe 17 SP3
+ * OQ dependency:   none   (or OQ-xx; if set, the test is Blocked and linked to its question)
+ *
+ * Citations (DOC-CAPL-001, DOC-CAPL-002, DOC-CAPL-003)
+ * One line per CAPL built-in function used in this script. Standard C-style
+ * constructs (if, for, while, switch, operators) are not cited. Source must be
+ * Vector CANoe online help (help.vector.com), Vector Knowledge Base (kb.vector.com),
+ * a vector.com application note, or the offline CAPL function reference installed
+ * with CANoe. A forum or blog is never the sole source.
+ *
+ * Format: <function> | <source> | <entry title or ID> | <CANoe version checked>
+ *
+ *   write    | CANoe offline CAPL function reference | General CAPL Functions > write | CANoe 17 SP3
+ *   setTimer | CANoe offline CAPL function reference | Timer Functions > setTimer     | CANoe 17 SP3
+ */
+
+variables
+{
+  msTimer tStep;
+}
+
+on start
+{
+  write("Script started");
+  setTimer(tStep, 100);
+}
+
+on timer tStep
+{
+  write("Step timer elapsed");
+}

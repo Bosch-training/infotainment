@@ -1,0 +1,11 @@
+{
+  "devices": [
+    {"id": "DEV-001", "name": "Test Phone A", "passkey": "123456"},
+    {"id": "DEV-002", "name": "Test Phone B", "passkey": "234567"},
+    {"id": "DEV-003", "name": "Test Phone C", "passkey": "345678"},
+    {"id": "DEV-004", "name": "Test Phone D", "passkey": "456789"},
+    {"id": "DEV-005", "name": "Test Phone E", "passkey": "567890"},
+    {"id": "DEV-006", "name": "Test Phone F", "passkey": "678901"},
+    {"id": "DEV-007", "name": "Test Phone G", "passkey": "789012"}
+  ]
+}

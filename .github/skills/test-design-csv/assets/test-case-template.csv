@@ -1,0 +1,2 @@
+test_id,requirement_id,test_title,test_type,technique,priority,preconditions,test_data,steps,expected_result,oq_dependency,status,notes
+TC-BT-003-01,FR-BT-003,"FR-BT-003: sixth pairing blocked at capacity",Boundary,Boundary value analysis,High,"Bluetooth on; 5 devices paired","DEV-006","1. Start scan; 2. Select DEV-006","Sixth device not added; limit-reached message shown before the passkey step",none,Ready,"SRS 5 FR-BT-003 AC2; SRS 14 Q-09"

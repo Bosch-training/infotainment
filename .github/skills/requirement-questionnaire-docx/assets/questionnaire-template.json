@@ -1,0 +1,43 @@
+{
+  "meta": {
+    "title": "Requirement Review Questionnaire",
+    "srs_file": "SmartDrive_IVI_Specification_1_Bluetooth_Connectivity.md",
+    "srs_version": "<version from SRS>",
+    "review_date": "<YYYY-MM-DD>",
+    "reviewer": "QA",
+    "instructions": "For each question, pick an option (or write your own) in 'Owner response', note any requirement change in 'Decision / requirement change', then return this file."
+  },
+  "questions": [
+    {
+      "id": "Q-01",
+      "priority": "High",
+      "requirement": "FR-BT-004",
+      "srs_ref": "5, FR-BT-004 workshop clarification point",
+      "category": "Missing info",
+      "excerpt": "<exact SRS text>",
+      "question": "<one decision, plain language>",
+      "options": [
+        "A) <choice> (Proposed (unconfirmed))",
+        "B) <choice>",
+        "C) Other: ____"
+      ],
+      "why": "<testing impact, one sentence>",
+      "blocks": "<test area, not test cases>"
+    }
+  ],
+  "open_questions": [
+    {
+      "oq": "OQ-01",
+      "related": "<Req IDs>",
+      "status": "Unresolved",
+      "value_needed": "<testable value the owner must give>",
+      "blocked": "<test areas>",
+      "linked_q": "Q-01"
+    }
+  ],
+  "coverage": [
+    { "req": "FR-BT-001", "reviewed": "Yes", "questions": "-", "testable": "Yes" }
+  ],
+  "clear": ["<requirement ID: why it needs no clarification>"],
+  "next_step": "Return the completed questionnaire. Decisions are recorded as requirement changes, then test design starts."
+}

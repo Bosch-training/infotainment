@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SmartDrive IVI Bluetooth test case CSV row",
+  "description": "One CSV row. Column order = required array. Patterns are matched against the whole cell. Cross-field rules are enforced by scripts/validate_test_csv.py.",
+  "type": "object",
+  "required": [
+    "test_id", "requirement_id", "test_title", "test_type", "technique", "priority",
+    "preconditions", "test_data", "steps", "expected_result", "oq_dependency", "status", "notes"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "test_id": {
+      "type": "string",
+      "pattern": "^TC-(BT|NFR|DOC)-\\d{3}-\\d{2}$",
+      "description": "TC-BT-NNN-NN for FR, TC-NFR-NNN-NN for NFR, TC-DOC-NNN-NN for CAPL docs."
+    },
+    "requirement_id": {
+      "type": "string",
+      "enum": [
+        "FR-BT-001", "FR-BT-002", "FR-BT-003", "FR-BT-004", "FR-BT-005", "FR-BT-006", "FR-BT-007", "FR-BT-008",
+        "NFR-BT-001", "NFR-BT-002", "NFR-BT-003", "NFR-BT-004", "NFR-BT-005",
+        "DOC-CAPL-001", "DOC-CAPL-002", "DOC-CAPL-003"
+      ]
+    },
+    "test_title": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(FR-BT-\\d{3}|NFR-BT-\\d{3}|DOC-CAPL-\\d{3}): .+",
+      "description": "Must start with the requirement ID."
+    },
+    "test_type": {
+      "type": "string",
+      "enum": ["Positive", "Negative", "Boundary", "Edge", "State", "Decision", "UseCase", "NFR", "Doc"]
+    },
+    "technique": {
+      "type": "string",
+      "enum": [
+        "Equivalence partitioning", "Boundary value analysis", "Decision table", "State transition",
+        "Use case", "Error guessing", "Exploratory", "NFR check", "Document review", "Requirement based"
+      ]
+    },
+    "priority": { "type": "string", "enum": ["High", "Medium", "Low"] },
+    "preconditions": { "type": "string", "minLength": 1 },
+    "test_data": { "type": "string", "minLength": 1, "description": "Synthetic values only." },
+    "steps": { "type": "string", "minLength": 1, "description": "Numbered, separated by '; '." },
+    "expected_result": { "type": "string", "minLength": 1 },
+    "oq_dependency": {
+      "type": "string",
+      "pattern": "^(none|OQ-0[1-8](;OQ-0[1-8])*)$"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["Ready", "Blocked"],
+      "description": "Blocked if and only if oq_dependency is not 'none'."
+    },
+    "notes": { "type": "string", "description": "Source section reference, may be empty." }
+  },
+  "x-coverage": {
+    "positive_negative_prefix": "FR-",
+    "boundary_required": ["FR-BT-003", "FR-BT-007"],
+    "oq_ids": ["OQ-01", "OQ-02", "OQ-03", "OQ-04", "OQ-05", "OQ-06", "OQ-07", "OQ-08"]
+  }
+}
